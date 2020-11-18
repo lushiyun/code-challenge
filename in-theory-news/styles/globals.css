@@ -78,3 +78,24 @@ h2 {
 h3 {
   font-size: var(--fs-h3);
 }
+
+/* Header */
+
+header {
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 250px;
+}
+
+.logo__byline {
+  width: 100%;
+  text-align: center;
+  border-top: var(--clr-dark) 1px solid;
+  border-bottom: var(--clr-dark) 1px solid;
+}

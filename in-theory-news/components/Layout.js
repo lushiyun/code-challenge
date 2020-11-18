@@ -13,6 +13,8 @@ const Layout = ({ children }) => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
+
+    {/* inline styles for sticky footer */}
     <div
       style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
