@@ -6,10 +6,9 @@ const Header = () => {
   // While the StoriesList component also uses this hook
   // Data in one of the components is served from cache
   // So there is only one http fetch call
-
   const { data, isLoading, isError } = useStories();
 
-  // render a list of unique section names in the nav
+  // dynamically render a list of unique section names based on API call result
   const renderedSections = (data) => {
     const sectionsSet = new Set(data.results.map((story) => story.section));
     return [...sectionsSet].map((section) => <li key={section}>{section}</li>);
