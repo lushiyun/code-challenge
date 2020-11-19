@@ -1,9 +1,10 @@
 import Layout from '../components/Layout';
+import StoriesList from '../components/StoriesList';
 
 export default function Home() {
   return (
     <Layout>
-      <div>hello world</div>
+      <StoriesList />
     </Layout>
   );
 }
