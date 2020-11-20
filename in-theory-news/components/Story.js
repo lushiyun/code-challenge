@@ -17,7 +17,7 @@ const Story = ({ story }) => (
         />
       ) : (
         // if no multimedia, serve logo
-        <img src="/in-theory.svg" alt="In Theory Logo" className="logo" />
+        <img src="/in-theory.png" alt="In Theory Logo" className="logo" />
       )}
     </div>
 
