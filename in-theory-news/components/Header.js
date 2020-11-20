@@ -16,7 +16,7 @@ const Header = () => {
         {/* dynamic routing */}
         <Link href={`/${section}`}>
           <a
-          // conditional styling - active link orange
+            // conditional styling - active link orange
             className={section === router.query.section ? 'nav__active' : null}>
             {section}
           </a>
