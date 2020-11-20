@@ -1,9 +1,6 @@
-// Custom hook for fetching news stories from NY Times API
-// It uses the swr (stale while revalidate) library (5kb)
-// swr is a strategy to first return the data from cache (stale)
-// then send the fetch request (revalidate)
-// It makes managing "global state" easy
-// https://swr.vercel.app/
+// custom hook for API fetch
+// uses swr (stale while revalidate) library (5kb)
+// serves data first from cache
 
 import useSWR from 'swr';
 

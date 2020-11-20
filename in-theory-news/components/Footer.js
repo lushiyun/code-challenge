@@ -16,6 +16,8 @@ const Footer = () => {
     <footer>
       <div className="newsletter">
         <h3 className="newsletter__cta">One Email. All Our Best Stories.</h3>
+
+        {/* integrate tinnyletter for newsletter subscriptions */}
         <form
           className="newsletter__form"
           action="https://tinyletter.com/shiyunlu"
@@ -67,6 +69,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+      
       <small className="copyright">
         {new Date().getFullYear()} ©{' '}
         <a

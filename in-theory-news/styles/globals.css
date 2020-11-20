@@ -21,6 +21,25 @@ body {
   margin: 0;
 }
 
+input,
+button {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+}
+
+/* Sticky Footer */
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
 /* Custom Properties */
 
 :root {
@@ -93,6 +112,45 @@ header {
   margin: 2rem auto;
 }
 
+/* Search */
+.search-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.search__input {
+  font-size: 1rem;
+  font-family: var(--ff-primary);
+  padding: 0.75rem 1rem;
+  min-width: 10rem;
+  margin: 0 1rem;
+  border-bottom: 1px solid #848484;
+}
+
+.search__btn {
+  color: var(--clr-light);
+  padding: 0.75rem 1rem;
+  z-index: 5;
+  background: var(--clr-accent);
+  transition: 250ms ease-in-out;
+}
+
+.search__btn:hover,
+.search__btn:active {
+  background-color: var(--clr-dark);
+  cursor: pointer;
+}
+
+.search__term {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 /* Header */
 
 header {
@@ -103,6 +161,7 @@ header {
 
 .logo {
   width: 380px;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -118,6 +177,11 @@ header {
 
 .nav li {
   text-transform: uppercase;
+}
+
+.nav a:hover,
+.nav__active {
+  color: var(--clr-accent);
 }
 
 /* Story */
@@ -153,6 +217,12 @@ header {
   }
 }
 
+.story__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .story__section,
 .story__byline {
   font-family: var(--ff-secondary);
@@ -161,6 +231,10 @@ header {
 .story__section {
   font-weight: var(--fw-bold);
   color: var(--clr-accent);
+}
+
+.story__section a:hover {
+  color: var(--clr-dark);
 }
 
 .story__byline {
@@ -208,12 +282,6 @@ footer {
   display: flex;
 }
 
-.newsletter__form input {
-  -webkit-appearance: none;
-  outline: none;
-  border: none;
-}
-
 .newsletter__input {
   flex-grow: 1;
   padding: 0.75rem;
@@ -245,7 +313,7 @@ footer {
 
 .follow__list a {
   font-size: 1.5rem;
-  padding: .5rem;
+  padding: 0.5rem;
   color: var(--clr-accent);
   transition: 250ms ease-in-out;
 }
@@ -265,7 +333,7 @@ footer {
   font-family: var(--ff-secondary);
   display: inline-block;
   position: absolute;
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
 }
 
 .copyright {
