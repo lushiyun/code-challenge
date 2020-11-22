@@ -10,13 +10,13 @@ const StoriesList = () => {
 
   return (
     <section className="stories">
-      {data.results.map((story) => (
+      {data.results.map((story, index) => (
         <article
           //no id returned; short_url serves as unique key
           key={story.short_url}
           className={
             //headline class for firs story in the list
-            story.short_url === data.results[0].short_url ? 'headline' : 'story'
+            index === 0 ? 'headline' : 'story'
           }>
           <Story story={story} />
         </article>
