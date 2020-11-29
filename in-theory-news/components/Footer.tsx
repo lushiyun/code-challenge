@@ -2,7 +2,7 @@ import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const handleSubmit = () => {
     window.open(
       'https://tinyletter.com/shiyunlu',
@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="newsletter">
         <h3 className="newsletter__cta">One Email. All Our Best Stories.</h3>
 
-        {/* integrate tinnyletter for newsletter subscriptions */}
+        {/* integrate tinyletter for newsletter subscriptions */}
         <form
           className="newsletter__form"
           action="https://tinyletter.com/shiyunlu"
@@ -69,7 +69,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      
+
       <small className="copyright">
         {new Date().getFullYear()} ©{' '}
         <a

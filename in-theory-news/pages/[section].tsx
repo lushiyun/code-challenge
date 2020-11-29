@@ -4,12 +4,14 @@ import Layout from '../components/Layout';
 import Story from '../components/Story';
 import Spinner from '../components/Spinner';
 
-const Section = () => {
+import { Data } from '../models/data';
+
+const Section: React.FC = () => {
   const router = useRouter();
   const { section } = router.query;
   const { data, isLoading, isError } = useStories();
 
-  const renderedStories = (data) => {
+  const renderedStories = (data: Data) => {
     const sectionStories = data.results.filter(
       (story) => story.section === section
     );
@@ -25,7 +27,7 @@ const Section = () => {
     );
   };
 
-  return <Layout>{isLoading ? <Spinner /> : renderedStories(data)}</Layout>;
+  return <Layout>{isLoading ? <Spinner /> : renderedStories(data!)}</Layout>;
 };
 
 export default Section;

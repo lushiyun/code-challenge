@@ -1,6 +1,6 @@
 import styles from '../styles/Spinner.module.css';
 
-const Spinner = () => {
+const Spinner: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.spinner}>

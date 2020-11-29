@@ -7,20 +7,23 @@ import Layout from '../../components/Layout';
 import Story from '../../components/Story';
 import Spinner from '../../components/Spinner';
 
-const Section = () => {
+import { Result } from '../../models/data';
+
+const Section: React.FC = () => {
   const router = useRouter();
   const { term } = router.query;
   // served from cache
   const { data, isLoading, isError } = useStories();
 
-  const renderedResults = (stories) => {
+  const renderedResults = (stories: Result[]) => {
     const fuse = new Fuse(stories, {
       keys: ['title', 'byline', 'section'],
     });
 
     // sorted by relevance
     const searchResults =
-      term && fuse.search(term).map((result) => result.item);
+      typeof term === 'string' &&
+      fuse.search(term).map((result) => result.item);
 
     return (
       <>
@@ -39,7 +42,7 @@ const Section = () => {
   };
 
   return (
-    <Layout>{isLoading ? <Spinner /> : renderedResults(data.results)}</Layout>
+    <Layout>{isLoading ? <Spinner /> : renderedResults(data!.results)}</Layout>
   );
 };
 

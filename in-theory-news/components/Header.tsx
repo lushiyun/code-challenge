@@ -1,23 +1,24 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import useStories from '../hooks/useStories';
 
-const Header = () => {
+import useStories from '../hooks/useStories';
+import { Data } from '../models/data';
+
+const Header: React.FC = () => {
   //data served from cache; only one http fetch call
   const { data, isLoading, isError } = useStories();
   const router = useRouter();
 
   //render unique section names per fetch result
-  const renderedSections = (data) => {
+  const renderedSections = (data: Data) => {
     const sectionsSet = new Set(data.results.map((story) => story.section));
 
     return [...sectionsSet].map((section) => (
       <li key={section}>
-        {/* dynamic routing */}
         <Link href={`/${section}`}>
           <a
             // conditional styling - active link orange
-            className={section === router.query.section ? 'nav__active' : null}>
+            className={section === router.query.section ? 'nav__active' : 'nav__inactive'}>
             {section}
           </a>
         </Link>
