@@ -46,7 +46,9 @@ const Layout: React.FC = ({children}) => {
           onChange={(e) => setQueryTerm(e.target.value)}
           onKeyPress={handleKeyPress}
         />
-        <button onClick={(e) => setSearchInputOpen(!open)} className="search__btn">
+        <button
+          onClick={(e) => setSearchInputOpen(!searchInputOpen)}
+          className="search__btn">
           {searchInputOpen ? <IoMdClose size={18} /> : <FaSearch size={18} />}
         </button>
       </div>
