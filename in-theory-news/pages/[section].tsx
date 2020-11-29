@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Story from '../components/Story';
 import Spinner from '../components/Spinner';
 
-import { Data } from '../models/data';
+import { Data } from '../hooks/useStories';
 
 const Section: React.FC = () => {
   const router = useRouter();

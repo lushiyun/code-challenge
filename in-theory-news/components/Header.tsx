@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import useStories from '../hooks/useStories';
-import { Data } from '../models/data';
+import useStories, { Data } from '../hooks/useStories';
 
 const Header: React.FC = () => {
   //data served from cache; only one http fetch call
@@ -18,7 +17,9 @@ const Header: React.FC = () => {
         <Link href={`/${section}`}>
           <a
             // conditional styling - active link orange
-            className={section === router.query.section ? 'nav__active' : 'nav__inactive'}>
+            className={
+              section === router.query.section ? 'nav__active' : 'nav__inactive'
+            }>
             {section}
           </a>
         </Link>

@@ -2,7 +2,7 @@
 //avoid shipping large images
 import Image from 'next/image';
 import Link from 'next/link';
-import { Result } from '../models/data';
+import { Result } from '../hooks/useStories';
 
 const Story = ({ story }: { story: Result }) => {
 
