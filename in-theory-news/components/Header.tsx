@@ -30,7 +30,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <Link href="/">
-        <a>
+        <a aria-label="Home">
           <img src="/in-theory.png" alt="In Theory Logo" className="logo" />
         </a>
       </Link>

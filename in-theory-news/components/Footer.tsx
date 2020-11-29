@@ -30,12 +30,14 @@ const Footer: React.FC = () => {
             name="email"
             id="tlemail"
             placeholder="Enter Email Address"
+            aria-label="email address for newsletter"
           />
           <input type="hidden" value="1" name="embed" />
           <input
             className="newsletter__submit"
             type="submit"
             value="Subscribe"
+            aria-label="subscribe to newsletter"
           />
         </form>
       </div>

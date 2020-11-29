@@ -8,7 +8,7 @@ import { IoMdClose } from 'react-icons/io';
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout: React.FC = ({children}) => {
+const Layout: React.FC = ({ children }) => {
   const router = useRouter();
   const [searchInputOpen, setSearchInputOpen] = useState(false);
   const [queryTerm, setQueryTerm] = useState('');
@@ -37,18 +37,19 @@ const Layout: React.FC = ({children}) => {
 
       <div className="search-box">
         <input
-          //toggle visibility
+          aria-label="Search"
           className={searchInputOpen ? 'search__input' : 'hidden'}
           type="text"
           placeholder="search..."
-          //controlled form
           value={queryTerm}
           onChange={(e) => setQueryTerm(e.target.value)}
           onKeyPress={handleKeyPress}
         />
         <button
+          type="submit"
           onClick={() => setSearchInputOpen(!searchInputOpen)}
-          className="search__btn">
+          className="search__btn"
+          aria-label={searchInputOpen ? 'Search' : 'Close'}>
           {searchInputOpen ? <IoMdClose size={18} /> : <FaSearch size={18} />}
         </button>
       </div>

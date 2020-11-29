@@ -14,7 +14,8 @@ const Story = ({ story }: { story: Result }) => {
           <Image
             src={story.multimedia[0].url}
             alt={story.multimedia[0].caption}
-            //width height ratio based on standardized "superJumbo" size
+            // width height ratio based on standardized "superJumbo" size
+            // nextjs image proposal (infer width & height):  https://github.com/vercel/next.js/issues/18497
             width={750}
             height={500}
           />
